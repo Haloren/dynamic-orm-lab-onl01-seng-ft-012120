@@ -64,10 +64,10 @@ class InteractiveRecord
   require 'pry' 
   def self.find_by(input)
     #binding.pry input= 1 change to string .to_s
-    if input[:name]
-      self.find_by_name(input[:name]).to_s 
+    if input.to_s[:name]
+      self.find_by_name(input.to_s[:name])
     else
-      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade]
+      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input.to_s[:grade]
       DB[:conn].execute(sql)
     end   
   end 
