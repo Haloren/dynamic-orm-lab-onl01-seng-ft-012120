@@ -63,12 +63,12 @@ class InteractiveRecord
   end
   require 'pry' 
   def self.find_by(input)
-    #binding.pry input= 1 change to string .to_s
-    if input[:name]
-      self.find_by_name(input[:name])
-    else
-      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade]
-      DB[:conn].execute(sql)
+    #binding.pry input= 1 change to string
+    column = input.keys[0].to_s
+    value = input.values[0]
+    
+      sql = "SELECT * FROM #{self.table_name} WHERE #{column} = ?"
+      DB[:conn].execute(sql, value)
     end   
   end 
   
