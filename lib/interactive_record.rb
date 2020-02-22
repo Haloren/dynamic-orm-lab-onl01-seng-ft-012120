@@ -61,7 +61,7 @@ class InteractiveRecord
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
-  
+  require 'pry' 
   def self.find_by(input)
     binding.pry 
     if input[:name]
