@@ -62,7 +62,7 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
   
-  def self.find_by(input)
+  def self.find_by(input.to_s)
     if input[:name]
       self.find_by_name(input[:name])
     else
