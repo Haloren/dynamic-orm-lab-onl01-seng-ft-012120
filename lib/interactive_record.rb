@@ -63,7 +63,7 @@ class InteractiveRecord
   end
   require 'pry' 
   def self.find_by(input)
-    binding.pry 
+    #binding.pry input= 1 change to string .to_s
     if input[:name]
       self.find_by_name(input[:name])
     else
