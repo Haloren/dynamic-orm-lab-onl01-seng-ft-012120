@@ -64,7 +64,7 @@ class InteractiveRecord
   
   def self.find_by(input)
     if input[:name]
-      
+      self.find_by_name(input[:name])
     else
       sql = "SELECT * FROM #{self.table_name} WHERE name = '#{input}'"
       DB[:conn].execute(sql)
