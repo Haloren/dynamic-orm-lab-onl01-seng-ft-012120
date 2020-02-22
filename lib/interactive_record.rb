@@ -62,8 +62,8 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
   
-  def self.find_by(input.to_s)
-    if input[:name]
+  def self.find_by(input)
+    if input[:name].to_s
       self.find_by_name(input[:name])
     else
       sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade]
