@@ -66,7 +66,7 @@ class InteractiveRecord
     if input[:name].to_s
       self.find_by_name(input[:name])
     else
-      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade]
+      sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade].to_s
       DB[:conn].execute(sql)
     end   
   end 
