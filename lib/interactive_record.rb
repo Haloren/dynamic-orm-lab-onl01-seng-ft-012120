@@ -63,7 +63,7 @@ class InteractiveRecord
   end
   
   def self.find_by(input)
-    #binding.pry 
+    binding.pry 
     if input[:name]
       self.find_by_name(input[:name])
     else
