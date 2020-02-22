@@ -15,7 +15,7 @@ class InteractiveRecord
   
   def 
     
-  end   
+  end self.column  
   
   
 end
