@@ -69,7 +69,6 @@ class InteractiveRecord
     else
       sql = "SELECT * FROM #{self.table_name} WHERE grade = ?", input[:grade]
       DB[:conn].execute(sql)
-    binding.pry 
     end   
   end 
   
